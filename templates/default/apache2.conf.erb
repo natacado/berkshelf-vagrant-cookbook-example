@@ -1,0 +1,22 @@
+<VirtualHost *:80>
+        ServerAdmin <%= node['apache']['contact'] %>
+
+        DocumentRoot /srv/apache/myface
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /srv/apache/myface>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride None
+                Order allow,deny
+                allow from all
+        </Directory>
+
+        ErrorLog <%= node['apache']['log_dir'] %>/error.log
+
+        LogLevel warn
+
+        CustomLog <%= node['apache']['log_dir'] %>/access.log combined
+        ServerSignature Off
+</VirtualHost>
