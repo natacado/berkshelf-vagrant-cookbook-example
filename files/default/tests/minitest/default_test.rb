@@ -8,4 +8,8 @@ describe 'myface::default' do
   it 'runs no tests by default' do
   end
 
+  it "creates a service account for the myface daemon" do
+    user("myface").must_exist
+  end
+
 end
