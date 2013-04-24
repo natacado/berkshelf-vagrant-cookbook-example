@@ -8,3 +8,5 @@
 #
 
 user "myface"
+
+include_recipe "mysql::server"

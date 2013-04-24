@@ -12,4 +12,9 @@ describe 'myface::default' do
     user("myface").must_exist
   end
 
+  it "runs a MySQL service" do
+    service(node[:mysql][:service_name]).must_be_running
+    service(node[:mysql][:service_name]).must_be_enabled
+  end
+
 end
