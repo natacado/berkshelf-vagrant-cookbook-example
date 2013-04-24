@@ -14,6 +14,7 @@ None (yet)
 default.rb
  - Creates myface user
  - Install MySQL
+ - Creates MySQL schema, seeds schema with test data
 
 # Author
 

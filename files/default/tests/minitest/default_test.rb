@@ -17,4 +17,7 @@ describe 'myface::default' do
     service(node[:mysql][:service_name]).must_be_enabled
   end
 
+  it "seeds the myface database" do
+    myface_tables.must_include('users')
+  end
 end
