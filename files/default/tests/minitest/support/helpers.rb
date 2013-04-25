@@ -7,8 +7,8 @@ module Helpers
 
     def myface_tables
       require 'mysql'
-      connection = ::Mysql.new 'localhost', 'root', node['mysql']['server_root_password']
-      mfts = connection.select_db('myface').list_tables
+      connection = ::Mysql.new node['myface']['database']['host'], node['myface']['database']['username'], node['myface']['database']['password']
+      mfts = connection.select_db(node['myface']['database']['dbname']).list_tables
     end
   end
 end
